@@ -3,4 +3,6 @@ RUN apk --update add bash nano
 ENV STATIC_URL /static
 ENV STATIC_PATH /var/www/app/static
 COPY ./requirements.txt /var/www/requirements.txt
+RUN apk add postgresql-dev gcc python3-dev musl-dev build-base
+RUN pip install --upgrade pip
 RUN pip install -r /var/www/requirements.txt

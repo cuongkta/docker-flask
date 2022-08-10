@@ -14,3 +14,18 @@ services:
       - ./docker-run.env
     volumes:
       - .:/app
+
+
+  postgres:
+    container_name: "postgres"
+    restart: "always"
+    image: postgres
+    env_file:
+      - ./docker_config/postgres.env
+    volumes:
+      #- /home/cuongta/postgres_volume:/var/lib/postgresql/data/
+     - ./database/:/var/database
+     - D:\WORKSPACE\Python\postgres_volume:/var/lib/postgresql/data/
+     - ./services/postgres/:/docker-entrypoint-initdb.d/
+    ports:
+      - 5433:5432
