@@ -1,0 +1,16 @@
+version: '3' 
+services:
+  flask:
+    image: citigo/flask-docker:latest
+    build:
+       context: .
+       dockerfile: Dockerfile
+
+    container_name: flask
+    ports:
+      - 56733:80
+
+    env_file:
+      - ./docker-run.env
+    volumes:
+      - .:/app
