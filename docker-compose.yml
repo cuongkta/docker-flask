@@ -17,7 +17,7 @@ services:
 
 
   postgres:
-    container_name: "postgres"
+    container_name: "flask_postgres"
     restart: "always"
     image: postgres
     env_file:

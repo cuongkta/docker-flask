@@ -5,7 +5,7 @@ conn = psycopg2.connect(
         host="postgres",
         database="flask_db",
         user="postgres",
-        password="vietnam456")
+        password="citigo123")
 
 # Open a cursor to perform database operations
 cur = conn.cursor()
